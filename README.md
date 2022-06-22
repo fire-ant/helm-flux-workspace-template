@@ -1,6 +1,6 @@
 ### Flux-Helm GitOps Lab
 
-This is a local harness for validating the delivery of Flux resources without the need to operate/manage the resources through a Git repository. It was inspired by [Flux/Cues](https://github.com/fluxcd/cues/tree/main/tools/install) and tries to enhance that expereince by wrapping the deployment process in [tilt](https://tilt.dev) and devcontainers so that it can be portable and reproducible. The idea is that it is easier to get to grips with the different flux resources and GitOps model without needing to do more than make changes to a local file structure.
+This is a local harness for validating the delivery of Flux resources without the need to operate/manage the resources through a Git repository. It was inspired by [Flux/Cues](https://github.com/fluxcd/cues/tree/main/tools/install) and tries to enhance that experience by wrapping the deployment process in [tilt](https://tilt.dev) and devcontainers so that it can be portable and reproducible. The idea is that it is easier to get to grips with the different flux resources and GitOps model without needing to do more than make changes to a local file structure.
 
 ### How it works
 The included Devcontainer has all the necessary tools to start working locally, including Flux. You only need to bring Docker/Docker-Compose and VSCode to get started.
