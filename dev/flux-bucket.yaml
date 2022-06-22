@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: Bucket
+metadata:
+  name: flux
+  namespace: flux-system
+spec:
+  interval: 10s
+  endpoint: minio.flux-system.svc.cluster.local:9000
+  provider: generic
+  insecure: true
+  secretRef:
+    name: flux-system
+  bucketName: flux

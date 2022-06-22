@@ -1,0 +1,16 @@
+mode: standalone
+persistence: 
+  enable: false
+resources: 
+  requests: 
+    memory: 32Mi
+makeBucketJob: 
+  requests: 
+    memory: 12Mi
+buckets: 
+  - name: flux
+    policy: upload
+    versioning: false
+clusterDomain: cluster.local
+rootUser: flux
+rootPassword: toolkit.fluxcd.io

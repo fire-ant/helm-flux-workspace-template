@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  serviceAccountName: kustomize-controller
+  sourceRef:
+    kind: Bucket
+    name: flux
+  path: ./
+  prune: true
+  wait: true
+  timeout: 1m
+  interval: 1m
