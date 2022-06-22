@@ -8,7 +8,7 @@ services:
     - ./resources:/resources:ro
   entrypoint: >
     /bin/sh -c "
-    sleep 3;
+    sleep 10;
     /usr/bin/mc alias set minio http://localhost:9000 flux toolkit.fluxcd.io --api S3v4;
     /usr/bin/mc mirror --watch /resources/ minio/flux 
     "
