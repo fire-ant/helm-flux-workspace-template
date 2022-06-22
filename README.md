@@ -24,6 +24,16 @@ tilt up
 
 Once in play you should be able to navigate to the VSCode tab and use the 'Sources' and 'Workloads' tabs to identify that pod-info has been deployed per the resources included under the [resources](./resources/) folder.
 
+#### manual checks
+
+you can use the following commands to verify the folder is syncing the bucket and source-controller is reconciling the contents:
+```
+flux get sources bucket -n flux-system
+flux get sources chart -n flux-system
+flux get sources helm -n flux-system
+```
+you should see the outputted respective artifacts at each stage of the process.
+
 ## shutdown:
 ```
 tilt down
