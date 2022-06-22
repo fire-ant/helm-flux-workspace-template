@@ -1,0 +1,12 @@
+# Creates a kind cluster
+---
+apiVersion: ctlptl.dev/v1alpha1
+kind: Cluster
+product: kind
+kindV1Alpha4Cluster:
+  name: flux-helm
+  nodes:
+  - role: control-plane
+  - role: worker
+  - role: worker
+  - role: worker
