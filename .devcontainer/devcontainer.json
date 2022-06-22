@@ -1,0 +1,49 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.238.0/containers/docker-in-docker
+{
+	"name": "Helm-Flux-GitOps",
+	"dockerFile": "Dockerfile",
+	"runArgs": ["--init", "--privileged"],
+	// "mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
+	"overrideCommand": false,
+	// Use this environment variable if you need to bind mount your local source code into a new container.
+	"remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+				"extensions": [
+					"ms-azuretools.vscode-docker",
+					"weaveworks.vscode-gitops-tools",
+					"tilt-dev.tiltfile",
+					"Tchoupinax.tilt",
+					"ms-kubernetes-tools.kind-vscode"
+				]
+		}
+	},
+	"remoteUser": "vscode",
+	"build": {
+		"args": {
+			"UPGRADE_PACKAGES": "true"
+		}
+	},
+	"features": {
+		"docker-in-docker": "latest",
+		"kubectl-helm-minikube": {
+			"version": "latest",
+			"helm": "latest",
+			"minikube": "none"
+		},
+		"git": "latest",
+		"github-cli": "latest"
+	},
+"containerEnv": {
+	// "KIND_EXPERIMENTAL_DOCKER_NETWORK": "kind",
+	"GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}",
+	"GITHUB_USER": "${localEnv:GITHUB_USER}"
+	}
+}
