@@ -22,7 +22,7 @@ to install the dependencies you can use the tiltfile with [tilt](https://tilt.de
 tilt up
 ```
 
-Once in play you should be able to navigate to the VSCode tab and use the 'Sources' and 'Workloads' tabs to identify that pod-info has been deployed per the 
+Once in play you should be able to navigate to the VSCode tab and use the 'Sources' and 'Workloads' tabs to identify that pod-info has been deployed per the resources included under the [resources](./resources/) folder.
 
 ## shutdown:
 ```
