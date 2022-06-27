@@ -5,7 +5,9 @@ This is a local harness for validating the delivery of Flux resources without th
 ### How it works
 The included Devcontainer has all the necessary tools to start working locally, including Flux. You only need to bring Docker/Docker-Compose and VSCode to get started.
 
-The tilt file deploys Flux through the community managed [Flux helm chart](https://github.com/fluxcd-community/helm-charts). In addition to this Minio is deployed and configured as a local bucket source in cluster. Once the cluster is built there is an adjacent minio-client preconfigured to watch the [resources] folder in the repo which contains the popular 'podinfo' microservice as an example. you can remove this and place what ever flux resources you wish here.
+The tilt file deploys Flux by via a  ```flux install ...```. additional manifests located in [./dev/](dev/) are used to configure the bucket/secret for source controller to referernce to sunc withthe local directory.
+
+In addition to this Minio is deployed and configured as a local bucket source in cluster. Once the cluster is built there is an adjacent minio-client preconfigured to watch the [resources] folder in the repo which contains the popular 'podinfo' microservice as an example. you can remove this and place what ever flux resources you wish here.
 
 Once the minio-client is up, it will automatically sync the minio bucket contents to this folder and source-controller will retrieve the contents of preconfigured bucket source (its on a low 10s interval but you may need to be patient).
 
